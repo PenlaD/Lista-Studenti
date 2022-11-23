@@ -1,0 +1,28 @@
+﻿@model Student
+
+
+@{
+    ViewBag.Title = ViewBag.Actiune + "Student";
+
+}
+<h2>@ViewBag.Title</h2>
+<form asp-action="Editare" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group" >
+        <label asp-for="Nume">Nume</label>
+        <input asp-for="Nume" class="form-control"/>
+    </div>
+    <div class="form-group" >
+        <label asp-for="AnStudiu">An de Studiu</label>
+        <input asp-for="AnStudiu" class="form-control"/>
+    </div>
+    <div class="form-group" >
+        <label asp-for="Nota">Nota</label>
+        <input asp-for="Nota" class="form-control"/>
+    </div>
+    <input type="hidden" asp-for="StudentID"/>
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Actiune</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-info">Anuleaza</a>
+
+</form>

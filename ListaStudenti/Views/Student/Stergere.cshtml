@@ -1,0 +1,15 @@
+﻿@model Student
+
+
+@{
+    ViewBag.Title = "Stergere Student";
+}
+
+<h1>Confirma Stergerea</h1>
+<h3>@Model.Nume</h3>
+<h3>An de Studiu: @Model.AnStudiu</h3>
+<form asp-action="Stergere" method="post">
+    <input type="hidden" asp-for="StudentID"/>
+    <button type="submit" class="btn btn-danger">Stergere</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-info">Anuleaza</a>
+</form>
